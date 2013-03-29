@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <set>
-#include <vector>
 #include <map>
 #include <queue>
 
@@ -18,9 +17,9 @@ public:
 
       // enqueue first element
       queue<pair<string, int> > queue;
-      map<string, bool> visited;
+      set<string> visited;
       queue.push(pair<string, int>(start, 1));
-      visited.insert(pair<string, bool>(start, true));
+      visited.insert(start);
 
       // walking
       while ( queue.size() > 0 )
@@ -43,7 +42,7 @@ public:
                   {
                      cout << "enqueue [" << tempStr << "] @ level = " << currLevel + 1 <<  endl;
                      queue.push(pair<string, int>(tempStr, currLevel+1));
-                     visited.insert(pair<string, bool>(tempStr, true));
+                     visited.insert(tempStr);
                   }
                }
             }
@@ -58,7 +57,7 @@ int main(int argc, const char *argv[])
 {
    Solution sol;
    string dictArr[] = {"hot", "cog", "dog", "tot", "hog", "hop", "pot", "dot"};
-   set<string> dict (dictArr, dictArr+8);
+   set<string> dict (dictArr, dictArr + sizeof(dictArr)/sizeof(*dictArr));
    cout << sol.ladderLength("hot", "dog", dict) << endl;
    
    return 0;
