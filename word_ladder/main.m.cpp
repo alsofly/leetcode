@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <set>
-#include <map>
 #include <queue>
 
 using namespace std;
@@ -12,7 +11,7 @@ public:
       // Start typing your C/C++ solution below
       // DO NOT write int main() function
       
-      // insert end to map
+      // insert end to set 
       dict.insert(end);
 
       // enqueue first element
