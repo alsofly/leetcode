@@ -34,6 +34,6 @@ public:
          }
       }
 
-      return maxValue > 0 ? maxValue : 0;
+      return max(maxValue, 0);
    }
 };
