@@ -32,8 +32,6 @@ public:
 
       return maxValue;
    }
-
-   
 };
 
 int main(int argc, const char *argv[])

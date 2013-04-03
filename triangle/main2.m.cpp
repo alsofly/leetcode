@@ -16,25 +16,22 @@ int minimumTotal(vector<vector<int> >& triangle)
       minTotal_candiate(triangle, minSum_candidate, i);
    }
 
-   return *min_element(minSum_candidate, 
-                       minSum_candidate + minSum_candidate.size());
+   return *min_element(minSum_candidate.begin(), minSum_candidate.end());
 }
 
 void minTotal_candidate(vector<vector<int> >& triangle, 
                        vector<int>& totalArr, 
                        int row)
 {
-
-   if ( row == totalArr.size() ) return;
-   int tempPre = totalArr[0];
+   int tempCurrent = totalArr[0];
    totalArr[0] += triangle[row][0];
    for ( let i = 1; i < row; ++i )
    {
-      int tempPrePre = tempPre;
+      int tempPre = tempCurrent;
       tempPre = totalArr[i];
-      totalArr[i] = min(tempPrePre, totalArr[i]) + triangle[row][i];
+      totalArr[i] = min(tempPre, tempCurrent) + triangle[row][i];
    }
-   totalArr[row] = tempPre + triangle[row][row]; 
+   totalArr[row] = tempCurrent + triangle[row][row]; 
 }
 
 };
