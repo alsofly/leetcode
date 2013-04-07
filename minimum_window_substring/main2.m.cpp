@@ -76,9 +76,7 @@ int main(int argc, const char *argv[])
    string t(argv[2]);
    Solution sol;
    
-   cout << endl << endl;
-   cout << endl << endl 
-        << "@" << endl << "@SOLUTION: " << sol.minWindow(s, t) << endl;
+   cout << "@SOLUTION: " << sol.minWindow(s, t) << endl;
    cout << "@S = [" << s << "]" << endl;
    cout << "@T = [" << t << "]" << endl;
    

@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import sys
 import subprocess
 
 TEST = [
@@ -37,7 +36,7 @@ def main():
          case['s'],
          case['t'],
       ])
-      print(output)
+      print(output.decode('utf-8'))
 
 
 if __name__ == "__main__":
