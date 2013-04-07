@@ -30,7 +30,6 @@ def shell(cmdList):
    else: return stdout
 
 
-
 def main():
    for case in TEST:
       output = shell([
@@ -39,10 +38,6 @@ def main():
          case['t'],
       ])
       print(output)
-
-
-
-
 
 
 if __name__ == "__main__":
