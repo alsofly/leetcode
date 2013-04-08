@@ -1,0 +1,12 @@
+This question is not a trivial one.... A good solution can be found here
+
+
+1) Johan jeuring's blog: this is the original version of the solution. And
+   gives some insights where this algorithm could be useful
+   http://johanjeuring.blogspot.com/2007/08/finding-palindromes.html
+2) Fred Akalin: this is more clearly explained and implemented in python,
+   which is earier to read. 
+   http://www.akalin.cx/longest-palindrome-linear-time
+
+main.m.cpp can't handle all cases provided in leetcode
+main2.m.cpp implented it with the algorithm provided in 2)
