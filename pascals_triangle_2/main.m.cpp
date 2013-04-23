@@ -21,10 +21,21 @@ public:
     }
 };
 
+ostream& operator<<(ostream& os, const vector<int>& vec)
+{
+   os << '[';
+   for ( int i = 0, size = vec.size(); i < size; ++i )
+   {
+      os << vec[i] << ',';
+   }
+   os << ']';
+   return os;
+}
+
 int main(int argc, const char *argv[])
 {
    Solution sol;
-   sol.getRow(5);
+   cout << sol.getRow(10) << endl;
    
    return 0;
 }
