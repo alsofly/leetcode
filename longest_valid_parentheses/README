@@ -1,0 +1,6 @@
+Treat this as a random walk. '(' is +1, while ')' is -1.
+
+If drawing a chart of (distance from origin - y-axis) vs (SN # of char in the 
+string - x-axis), it is a random walk of step 1. This question is asking to 
+find the maximum span on the x-axis, within which all points are on or above
+a certain level.
