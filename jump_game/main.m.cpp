@@ -10,26 +10,12 @@ public:
         // DO NOT write int main() function
         if ( n == 1 ) return true;
         
-        vector<bool> yes(n, false);
         int latestTrue(n - 1);
         for ( int i = n - 2; i >= 0; --i )
         {
-            if ( A[i] == 0 ) 
-            {
-                yes[i] = false;
-            }
-            else if ( A[i] + i >= n - 1 )
-            {
-                yes[i] = true;
-                latestTrue = i;
-            }
-            else
-            {   
-                yes[i] = latestTrue <= i + A[i];
-                if ( yes[i] ) latestTrue = i;
-            }
+           if ( latestTrue <= i + A[i] ) latestTrue = i;
         }
-        return yes[0];
+        return latestTrue == 0;
     }
 };
 
