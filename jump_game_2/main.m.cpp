@@ -9,7 +9,14 @@ ostream& operator<<(ostream& os, const vector<int> vec)
    os << '[';
    for ( int i = 0, size = vec.size(); i < size; ++i )
    {
-      os << vec[i] << ',';
+      if ( vec[i] == INT_MAX )
+      {
+         os << "inf" << ',';
+      }
+      else
+      {
+        os << vec[i] << ',';
+      }
    }
    os << ']';
    return os;
@@ -60,6 +67,7 @@ int jump(int A[], int n)
       }
    }
    cout << steps << endl;
+   cout << stepsize << endl;
    return steps[0];
 }
 };
