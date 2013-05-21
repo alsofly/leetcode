@@ -3,7 +3,7 @@
 
 using namespace std;
 
-ostream& operator<<(ostream& os, const vector<vector<int> > vec)
+ostream& operator<<(ostream& os, const vector<vector<int> >& vec)
 {
    os << "[\n";
    for ( int i = 0, len = vec.size(); i < len; ++i )
@@ -50,7 +50,6 @@ public:
         curr.push_back(pos);
         combine(out, curr, pos+1, n, k);
     }
-    
 };
 
 int main(int argc, const char *argv[])
