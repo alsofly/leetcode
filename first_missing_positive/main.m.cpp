@@ -5,14 +5,10 @@ using namespace std;
 class Solution {
 public:
    int firstMissingPositive(int A[], int n) {
-      // Start typing your C/C++ solution below
-      // DO NOT write int main() function
-
       // Move non-positive number to the end
       int tail(n - 1);
       for ( int i = 0; i < n; ++i )
-      {
-         
+      {       
          if ( i >= tail ) break;
          while ( A[i] <= 0 && i < tail ) 
          {
@@ -28,10 +24,9 @@ public:
       // mark m-th element negative if meet m ( when m < n )
       for ( int i = 0; i <= tail; ++i )
       {
-         if ( abs(A[i]) <= tail + 1
-           && A[abs(A[i])-1] > 0 )
+         if ( abs(A[i]) <= tail + 1 )
          {
-            A[abs(A[i])-1] *= -1;
+            A[abs(A[i])-1] = -abs(A[abs(A[i])-1]);
          }
       }
 
