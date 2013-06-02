@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <numeric>
 
 using namespace std;
 
@@ -27,7 +29,40 @@ public:
       // Start typing your C/C++ solution below
       // DO NOT write int main() function
       vector<vector<int> > rtn;
+
+      vector<int>::iterator it = unique(candidates.begin(), candidates.end());
+      candidates.resize(distance(candidates.begin(), it));
+      sort(candidates.begin(), candidates.end());
+      
+      vector<int> curr;
+      vector<int>::const_iterator iit = candidates.begin();
+      combinationSumImpl(rtn, candidates, iit, curr, target); 
+
       return rtn;
+   }
+
+   void combinationSumImpl(
+         vector<vector<int> >& rtn,
+         const vector<int>& candidates,
+         vector<int>::const_iterator& it,
+         vector<int>& curr, 
+         const int target)
+   {
+      int sum = accumulate(curr.begin(), curr.end(), 0);
+      if ( sum == target )
+      {
+         rtn.push_back(curr);
+         return;
+      }
+      if ( sum > target ) return;
+      if ( it == candidates.end() ) return;
+
+      for (vector<int>::const_iterator iit = it; iit != candidates.end(); ++iit )
+      {
+         vector<int> temp = curr;
+         temp.push_back(*iit);
+         combinationSumImpl(rtn, candidates, iit, temp, target); 
+      }
    }
 };
 
