@@ -76,4 +76,45 @@ std::ostream& operator<<(std::ostream& os, const std::set<T, std::greater<T> >& 
    return os;
 }
 
+/**
+ * Definition for singly-linked list.
+ */
+struct ListNode {
+   int val;
+   ListNode *next;
+   ListNode(int x) : val(x), next(NULL) {}
+};
+
+std::ostream& operator<<(std::ostream& os, ListNode *head)
+{
+   os << "[";
+   while ( head != NULL )
+   {
+      bool hasNext = head->next != NULL;
+      os << head->val << (hasNext ? "," : "");
+      head = head->next;
+   }
+   os << "]";
+   return os;
+}
+
+ListNode *create_linkedList_from_array(const std::vector<int>& vec)
+{
+   ListNode *head = NULL;
+   if ( vec.size() == 0 ) return head;
+   else
+   {
+      head = new ListNode(vec[0]);
+   }
+   ListNode *curr = head;
+   for ( std::vector<int>::const_iterator it = vec.begin() + 1
+         , itE = vec.end(); it != itE; ++it )
+   {
+      ListNode *currNext = new ListNode(*it);
+      curr->next = currNext;
+      curr = currNext;
+   }
+   return head;
+}
+
 #endif
