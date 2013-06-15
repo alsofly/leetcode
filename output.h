@@ -117,4 +117,16 @@ ListNode *create_linkedList_from_array(const std::vector<int>& vec)
    return head;
 }
 
+
+/**
+ * Definition for binary tree
+ */
+struct TreeNode {
+   int val;
+   TreeNode *left;
+   TreeNode *right;
+   TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+
 #endif
