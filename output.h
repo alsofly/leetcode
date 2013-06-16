@@ -5,6 +5,7 @@
 #include <vector>
 #include <map>
 #include <set>
+#include <queue>
 #include <functional>
 
 template <typename T>
@@ -127,6 +128,45 @@ struct TreeNode {
    TreeNode *right;
    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
+
+std::ostream& operator<<(std::ostream& os, TreeNode *head)
+{
+   if ( NULL == head )
+   {
+      os << "#";
+      return os;
+   }
+
+   std::queue<TreeNode *> que;
+   os << head->val << ", ";
+   que.push(head);
+   while ( que.size() > 0 )
+   {
+      TreeNode *curr = que.front();
+      que.pop();
+
+      if ( curr->left != NULL )
+      {
+         que.push(curr->left);
+         os << curr->left->val << ", ";
+      }
+      else
+      {
+         os << "#, ";
+      }
+
+      if ( curr->right != NULL )
+      {
+         que.push(curr->right);
+         os << curr->right->val << ", ";
+      }
+      else
+      {
+         os << "#, ";
+      }
+   }
+   return os;
+}
 
 
 #endif
