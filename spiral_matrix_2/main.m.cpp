@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <output.h>
 
 using namespace std;
 
@@ -51,6 +52,6 @@ public:
 int main(int argc, const char *argv[])
 {
    Solution sol;
-   
+   cout << sol.generateMatrix(5) << endl;
    return 0;
 }

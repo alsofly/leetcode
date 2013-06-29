@@ -8,10 +8,7 @@ public:
     int trap(int A[], int n) {
         // Start typing your C/C++ solution below
         // DO NOT write int main() function
-        if ( n == 0 ) return 0;
-        vector<int> o(A, A+n);
-        vector<int> l(o);
-        vector<int> r(o);
+        vector<int> o(A, A+n), l(o), r(o);
         
         for ( int i = 1; i < n; ++i )
         {
@@ -26,7 +23,7 @@ public:
         int water(0);
         for ( int i = 0; i < n; ++i )
         {
-            water += (min(l[i], r[i]) - o[i]);
+            water += min(l[i], r[i]) - o[i];
         }
         
         return water;
