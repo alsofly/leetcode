@@ -25,10 +25,10 @@ void minTotal_candidate(vector<vector<int> >& triangle,
 {
    int tempCurrent = totalArr[0];
    totalArr[0] += triangle[row][0];
-   for ( let i = 1; i < row; ++i )
+   for ( int i = 1; i < row; ++i )
    {
       int tempPre = tempCurrent;
-      tempPre = totalArr[i];
+      tempCurrent = totalArr[i];
       totalArr[i] = min(tempPre, tempCurrent) + triangle[row][i];
    }
    totalArr[row] = tempCurrent + triangle[row][row]; 
