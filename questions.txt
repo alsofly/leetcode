@@ -1,0 +1,32 @@
+1. Palindrome Partitioning 2
+Given a string s, partion s such that every substring of the partition is a palindrome.
+Return the minimum cuts needed for a palindrome partitioning of s.
+For example, given s = "aab",
+return 1 since the parlindrome partitioning ["aa, b"] could be produced using 1 cut.
+
+*2. Palindrome Partitioning
+Given a string s, partition s sunch that every substring of the partition is a palindrome. 
+Return all possible palindrome partitioning of s.
+For example, given s = "aab",
+Return
+        [
+          ["aa", "b"],
+          ["a", "a", "b"]
+        ]
+
+3. Surronded Regions
+Given a 2D board containing 'x' and 'o', capture all regions sorrounded by 'x'.
+A region is captured by flipping all 'o's into 'x's in that surrounded region.
+For example, 
+    xxxx
+    xoox
+    xxox
+    xoxx
+After running your function, the board should be:
+    xxxx
+    xxxx
+    xxxx
+    xoxx
+
+4. 
+
