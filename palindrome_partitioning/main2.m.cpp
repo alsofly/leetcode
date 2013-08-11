@@ -16,7 +16,7 @@ public:
     }
     
     void partition(vector<vector<string> >& out, 
-                   vector<string>           pre,
+                   vector<string>&          pre,
                    const string&            substring)
     {
         for ( int i = 0, len = substring.size(); i < len; ++i )
@@ -29,8 +29,8 @@ public:
                 else 
                 {
                     partition(out, pre, substring.substr(i+1));
-                    pre.pop_back();
                 }
+                pre.pop_back();
             }
         }
     }
